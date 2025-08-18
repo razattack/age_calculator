@@ -27,30 +27,33 @@
     <button onclick="checkAge()">Check Age</button>
     <p id="result"></p>
 
-    <script>
-        function checkAge() {
-            const age = parseInt(document.getElementById('age').value);
-            
-            if (isNaN(age)) {
-                message = "You are an idiot!";
-            } else if (age < 0) {
-                message = "You haven't been born yet!";
-            } else if (age === 0) {
-                message = "You are a newborn!";
-            } else if (age > 0 && age <= 2) {
-                message = "Hah! You're just a baby :X";
-            } else if (age > 2 && age <= 12) {
-                message = "You are a child!";
-            } else if (age > 12 && age <= 18) {
-                message = "You are a teenager";
-            } else if (age >= 65 && age <= 120) {
-                message = "You are old as shit!";
-            } else {
-                message = "You are a GOD!";
-            }
-            
-            document.getElementById('result').textContent = message;
+ <script>
+    function checkAge() {
+        const age = parseInt(document.getElementById('age').value);
+        let message = '';
+
+        if (isNaN(age)) {
+            message = "You are an idiot!";
+        } else if (age < 0) {
+            message = "You haven't been born yet!";
+        } else if (age === 0) {
+            message = "You are a newborn!";
+        } else if (age > 0 && age <= 2) {
+            message = "Hah! You're just a baby :X";
+        } else if (age > 2 && age <= 12) {
+            message = "You are a child!";
+        } else if (age > 12 && age <= 18) {
+            message = "You are a teenager";
+        } else if (age >= 65 && age <= 120) {
+            message = "You are old as shit!";
+        } else if (age > 18 && age < 65) {
+            message = "You are an adult";
+        } else if (age > 120) {
+            message = "You are a GOD!";
         }
-    </script>
+
+        document.getElementById('result').textContent = message;
+    }
+</script>
 </body>
 </html>
